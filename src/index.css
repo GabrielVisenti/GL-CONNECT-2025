@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 206 91% 11%;
+    --foreground: 43 68% 53%;
+
+    --card: 206 85% 14%;
+    --card-foreground: 43 68% 53%;
+
+    --popover: 206 85% 14%;
+    --popover-foreground: 43 68% 53%;
+
+    --primary: 43 68% 53%;
+    --primary-foreground: 206 91% 11%;
+
+    --secondary: 206 80% 18%;
+    --secondary-foreground: 43 68% 53%;
+
+    --muted: 206 70% 20%;
+    --muted-foreground: 43 40% 70%;
+
+    --accent: 43 68% 53%;
+    --accent-foreground: 206 91% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 206 60% 25%;
+    --input: 206 60% 20%;
+    --ring: 43 68% 53%;
+
+    --radius: 0.75rem;
+
+    --gold: 43 68% 53%;
+    --gold-light: 43 68% 65%;
+    --gold-dark: 43 68% 40%;
+    
+    --navy: 206 91% 11%;
+    --navy-light: 206 85% 14%;
+    --navy-lighter: 206 80% 18%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(206 91% 11%), hsl(206 85% 14%));
+    --gradient-gold: linear-gradient(135deg, hsl(43 68% 53%), hsl(43 68% 65%));
+    --gradient-overlay: linear-gradient(to bottom, hsl(206 91% 11% / 0.95), hsl(206 85% 14% / 0.9));
+    
+    --shadow-gold: 0 0 30px hsl(43 68% 53% / 0.3);
+    --shadow-gold-lg: 0 0 60px hsl(43 68% 53% / 0.4);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .shadow-gold-lg {
+    box-shadow: var(--shadow-gold-lg);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out;
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out;
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
