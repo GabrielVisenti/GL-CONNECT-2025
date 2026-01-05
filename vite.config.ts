@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   // GitHub Pages
- base: "/GL-CONNECT/",
+ base: "/GL-CONNECT-2025/",
 
 
   server: {
